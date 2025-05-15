@@ -6,4 +6,6 @@ import com.projectf1.castro.alm26.model.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
 
+    Usuario findByUsername(String username);
+
 }

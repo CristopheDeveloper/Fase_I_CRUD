@@ -20,6 +20,13 @@ public class ClienteServiceImpl implements ClienteService{
         return clienteRepository.save(cliente);
     }
 
+
+    @Override
+    public List<Cliente> guardarTodos(List<Cliente> clientes) {
+       return clienteRepository.saveAll(clientes);
+    }
+
+
     @Override
     public Optional<Cliente> obtenerPorId(Long id) {
         return clienteRepository.findById(id);

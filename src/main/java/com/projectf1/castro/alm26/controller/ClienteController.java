@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/clientes")
@@ -19,6 +22,11 @@ public class ClienteController {
     public Cliente crear(@RequestBody Cliente cliente) {
         return clienteService.guardar(cliente);
     }
+    @PostMapping
+    public List<Cliente> crearVarios(@RequestBody List<Cliente> clientes) {
+      return clienteService.guardarTodos(clientes);
+    }
+    
 
     @GetMapping
     public List<Cliente> listar() {

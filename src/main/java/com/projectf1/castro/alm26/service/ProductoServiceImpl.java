@@ -20,6 +20,14 @@ public class ProductoServiceImpl implements ProductoService{
     public Producto guardar(Producto producto) {
         return productoRepository.save(producto);
     }
+    
+
+    @Override
+    public List<Producto> guardarTodo(List<Producto> productos) {
+       
+        return productoRepository.saveAll(productos);
+    }
+
 
     @Override
     public Optional<Producto> obtenerPorId(Long id) {

@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/productos")
@@ -19,6 +22,12 @@ public class ProductoController {
     public Producto crear(@RequestBody Producto producto) {
         return productoService.guardar(producto);
     }
+
+    @PostMapping
+    public List<Producto> crearVarios(@RequestBody List<Producto> productos) {
+        return productoService.guardarTodo(productos);
+    }
+    
 
     @GetMapping
     public List<Producto> listar() {

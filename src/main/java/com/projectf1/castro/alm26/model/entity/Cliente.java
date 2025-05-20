@@ -45,4 +45,5 @@ public class Cliente {
     @ManyToOne
     @JoinColumn(name="id_producto")
     private Producto producto;
+
 }

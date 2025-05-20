@@ -1,11 +1,6 @@
 package com.projectf1.castro.alm26.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,13 +13,18 @@ import lombok.NoArgsConstructor;
 public class Proveedor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_Proveedores")
-    @SequenceGenerator(name = "sequence_Proveedores", sequenceName = "sequence_Proveedores", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_proveedores")
+    @SequenceGenerator(name = "sequence_proveedores", sequenceName = "sequence_proveedores", allocationSize = 1)
     private Long id;
 
+     @Column(nullable = false)
     private String nombreEmpresa;
+     @Column(nullable = false)
     private String nombreContacto;
+     @Column(nullable = false)
     private String correo;
+     @Column(nullable = false)
     private String telefono;
+     @Column(nullable = false)
     private String direccion;
 }
